@@ -1,7 +1,7 @@
 # Brain-Grounded Axes Reproducibility Repo
 
-This folder contains the analysis scripts, metadata, and paper sources needed to
-reproduce the results in the accompanying arXiv submission.
+This folder contains the analysis scripts and metadata needed to reproduce the
+core results.
 
 ## Contents
 
@@ -9,8 +9,6 @@ reproduce the results in the accompanying arXiv submission.
 - `config/`: project configuration
 - `mapping/`: run-to-story mappings
 - `metadata/`: runs index, lexica, confounds, timebase notes
-- `paper/`: arXiv-ready paper (`main.tex`, `references.bib`, `references.bbl`, figures)
-- `runbooks/`: step-by-step run instructions and project plan
 - `environment/`: dependency lists
 
 ## Environment
@@ -32,27 +30,10 @@ with DataLad and fetch the required derivatives. See `data_manifest.md`.
 
 ## Reproduce the pipeline
 
-Follow `runbooks/RUNBOOK.md`. The key steps are:
+High-level steps (script entrypoints live in `analysis/`):
 
 1. Compute MEG PLV states
 2. Build word-level atlas
 3. Discover axes (ICA)
 4. Train LLM adapters
 5. Run steering and evaluations
-6. Generate figures and compile the paper
-
-## Paper
-
-Paper sources are in `paper/`. To build:
-
-```
-cd paper
-xelatex main.tex
-```
-
-Figures can be regenerated via:
-
-```
-python ../analysis/make_paper_figures.py
-```
-
