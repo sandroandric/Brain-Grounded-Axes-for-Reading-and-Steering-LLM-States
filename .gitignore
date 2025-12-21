@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.tmp
+*.swp
+.ipynb_checkpoints/
+.venv/
+.venv_ner/
+outputs/
+derivatives/
+stimuli/
+sub-*/

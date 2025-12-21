@@ -1,0 +1,36 @@
+dataset: ds004078
+version: 1.2.1
+git_commit: 8c4c1355f3
+time_align_shift_s: 10.65
+auditory_delay_s: 0.0395
+band_definitions:
+  delta: [1.0, 3.0]
+  theta: [4.0, 7.0]
+  alpha: [8.0, 12.0]
+  beta: [13.0, 30.0]
+  low_gamma: [30.0, 40.0]
+plv_state:
+  metric: plv            # options: plv, wpli (leakage-robust)
+  state_space: edge_pca  # options: node, edge, edge_pca
+  pca_components: 128
+  picks: grad            # channel policy: grad | mag | all
+  window_defaults_by_band:
+    theta:
+      length_s: 2.0
+      step_s: 0.5
+    alpha:
+      length_s: 1.5
+      step_s: 0.5
+    beta:
+      length_s: 1.0
+      step_s: 0.25
+window_defaults:
+  length_s: 2.0
+  step_s: 0.5
+feature_default:
+  name: embedding_change
+  embed_model: gpt
+notes:
+  - Story IDs == run IDs (01-60); duration-based mapping kept only for QC.
+  - Preprocessed MEG is 0.1-40 Hz; >40 Hz requires raw MEG.
+  - PLV default uses edge space compressed with PCA (128 dims) on gradiometers; wPLI is available when you need a leakage-robust metric.

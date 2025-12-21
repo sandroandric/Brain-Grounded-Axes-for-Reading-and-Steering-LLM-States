@@ -1,0 +1,17 @@
+numpy
+scipy
+pandas
+scikit-learn
+mne
+matplotlib
+torch
+transformers
+tokenizers
+sentence-transformers
+nibabel
+h5py
+pyyaml
+tqdm
+datalad
+wandb
+spacy
